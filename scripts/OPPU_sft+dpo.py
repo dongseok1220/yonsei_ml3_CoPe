@@ -125,7 +125,9 @@ def contrastive_decoding(
         logits_processor.append(RepetitionPenaltyLogitsProcessor(repetition_penalty))
 
     logits_warper = LogitsProcessorList()
-    if do_sample:                     # 샘플링 옵션만 추가
+
+    # Sampling options added
+    if do_sample:                     
         if temperature != 1.0:
             logits_warper.append(TemperatureLogitsWarper(temperature))
         if 0 < top_k:
@@ -166,7 +168,7 @@ def contrastive_decoding(
             contrastive_logits = torch.log(truncated_expert_probs + 1e-8) - contrastive_alpha * torch.log(amateur_probs + 1e-8)
 
             processed_logits = logits_processor(all_input_ids, contrastive_logits)
-            processed_logits = logits_warper(all_input_ids, processed_logits)  # sample 옵션만 반영
+            processed_logits = logits_warper(all_input_ids, processed_logits)  # Sampling options only applied
 
             contrastive_probs = F.softmax(processed_logits, dim=-1)
 
