@@ -7,6 +7,7 @@
 
 ![CoPe teaser](assets/cope_teaser2.png)
 
+
 <div align="center">
 <p style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin:16px 0;width:100%;">
   <a href="https://naughtymaltiz16.github.io/cope_project_page/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#2f2f2f;color:#ffffff;border-radius:9999px;text-decoration:none;font-weight:bold;letter-spacing:0.01em;">
